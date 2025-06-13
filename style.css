@@ -1,0 +1,102 @@
+/* ======== FONDASI & VARIABEL ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #fdfaf5;
+    --text-color-dark: #3d3d3d;
+    --text-color-light: #6b6b6b;
+    --accent-color: #8a9a5b;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+    text-align: center;
+    overflow-x: hidden; /* Mencegah scroll horizontal karena dekorasi */
+}
+
+/* ======== ELEMEN DEKORATIF ======== */
+.dekorasi {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.dekorasi img {
+    width: 150px;
+}
+
+.dekor-1 { top: 5%; left: 10%; transform: rotate(-30deg); }
+.dekor-2 { top: 15%; right: 8%; transform: rotate(20deg); }
+.dekor-3 { bottom: 25%; left: 15%; transform: rotate(15deg); }
+.dekor-4 { bottom: 5%; right: 12%; transform: rotate(-15deg); }
+
+/* ======== LAYOUT UTAMA & CONTAINER ======== */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ======== HEADER ======== */
+header { padding: 40px 20px; }
+.logo-gf { width: 80px; margin-bottom: 20px; }
+header h1 { font-size: 1.2rem; color: var(--text-color-light); letter-spacing: 2px; text-transform: uppercase; }
+header .brand-name { font-size: 3.5rem; font-weight: 700; margin-top: 10px; }
+
+/* ======== MAIN CONTENT - HERO SECTION ======== */
+.hero { margin-bottom: 40px; }
+.hero-image-container img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.tagline { margin-top: 30px; }
+.tagline .tagline-sub { font-size: 1rem; color: var(--text-color-light); letter-spacing: 1px; }
+.tagline .tagline-main { font-size: 1.5rem; font-weight: 600; margin-top: 5px; }
+
+/* ======== MAIN CONTENT - ABOUT SECTION ======== */
+.about { padding: 40px 0; background-color: white; }
+.about h3 { font-size: 2rem; margin-bottom: 20px; }
+.about p { color: var(--text-color-light); max-width: 600px; margin: 0 auto 15px auto; }
+
+/* ======== FOOTER ======== */
+footer { padding: 40px 20px; background-color: #f5f0e9; }
+.contact-info a { display: block; margin-bottom: 20px; font-size: 1.2rem; font-weight: 600; text-decoration: none; color: var(--text-color-dark); transition: color 0.3s; }
+.contact-info a:hover { color: var(--accent-color); }
+.social-media a { margin: 0 15px; text-decoration: none; color: var(--text-color-light); font-weight: 600; transition: color 0.3s; }
+.social-media a:hover { color: var(--accent-color); }
+
+/* ======== EFEK ANIMASI SCROLL ======== */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ======== RESPONSIVE DESIGN UNTUK HP ======== */
+@media (max-width: 900px) {
+    .dekorasi { display: none; }
+}
+@media (max-width: 768px) {
+    header .brand-name { font-size: 2.5rem; }
+    .hero-image-container img { width: 250px; height: 250px; }
+    .tagline .tagline-main { font-size: 1.2rem; }
+    .about h3 { font-size: 1.5rem; }
+}
